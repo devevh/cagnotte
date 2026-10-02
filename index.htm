@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+<title>Cagnotte</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="w3-theme-lime.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family:"Montserrat",sans-serif}
+.w3-bar,h1,button {font-family:"Montserrat",sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+
+  <nav class="w3-flex w3-lime w3-card w3-large">
+
+    <a href="#"
+    class="w3-button w3-padding-large w3-white">
+    Home
+    </a>
+
+    <a href="#creerLaCagnotte"
+    class="w3-button w3-hide-small w3-padding-large w3-hover-white">
+    Créer
+    </a>
+
+    <a href="#voirLaCagnotte"
+    class="w3-button w3-hide-small w3-padding-large w3-hover-white">
+    Voir
+    </a>
+
+    <a href="#payerLaCagnotte"
+    class="w3-button w3-hide-small w3-padding-large w3-hover-white">
+    Payer
+    </a>
+
+    <a href="#retirerLaCagnotte"
+    class="w3-button w3-hide-small w3-padding-large w3-hover-white">
+    Retirer
+    </a>
+
+    <button
+    class="w3-button w3-hide-medium w3-hide-large w3-padding-large w3-hover-white w3-lime"
+    style="margin-left:auto"
+    onclick="myFunction()"
+    title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </button>
+
+  </nav>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo"
+  class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+
+    <a href="#creerLaCagnotte" class="w3-bar-item w3-button w3-padding-large">Créer</a>
+    <a href="#voirLaCagnotte" class="w3-bar-item w3-button w3-padding-large">Voir</a>
+    <a href="#payerLaCagnotte" class="w3-bar-item w3-button w3-padding-large">Payer</a>
+    <a href="#retirerLaCagnotte" class="w3-bar-item w3-button w3-padding-large">Retirer</a>
+
+  </div>
+
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-lime w3-center w3-padding-32">
+
+  <h1 class="w3-margin w3-jumbo">CAGNOTTE</h1>
+
+</header>
+<!-- page d'accueil sur la Cagnotte -->
+<section id="voirLaCagnotte" class="w3-container w3-light-grey w3-padding-64">
+
+  <div class="w3-content w3-grid"
+  style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;align-items:center">
+
+ 
+    <div class="w3-center">
+		<h2 class="">Nom</h2>
+		<i class="fa fa-coffee w3-padding-64 w3-text-theme"></i>
+    </div>
+
+	<div>
+  <div class="w3-container">
+  </div>
+  <ul class="w3-ul w3-border-bottom">
+    <li>
+      <h3>Pour qui ?</h3>
+      <p>The response to the animations was ridiculous</p>
+    </li>
+    <li>
+      <h3>Pour quel évènement ?</h3>
+      <p>Touching, gripping and genuinely well made</p>
+    </li>
+    <li>
+      <h3>Combien ?</h3>
+      <p>A huge success for Marvel and Disney</p>
+    </li>
+    <li>
+      <h3>Quand ?</h3>
+      <p>A huge success for Marvel and Disney</p>
+    </li>
+  </ul>
+
+<div class="w3-light-grey">
+  <div id="myBar" class="w3-container w3-theme w3-round" style="width:18%">17%</div>
+</div><br>
+
+<!-- <button class="w3-btn w3-theme w3-round" onclick="move()">Click Me</button>  -->
+<button class="w3-btn w3-theme w3-round" onclick="modalPayer()">Payer</button> 
+</div>
+  </div>
+
+</section>
+<!-- creer la Cagnotte -->
+<section id="creerLaCagnotte" class="w3-container w3-padding-64">
+	<div class="w3-content w3-grid"
+	  style="grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:16px;align-items:center">
+		<div> 
+			<form class="w3-container">
+				<h2>Créer la cagnotte</h2>
+				<div class="w3-row">
+					<div class="w3-half">
+						<input id="prive" class="w3-radio" type="radio" name="visibilite" value="prive" checked>
+						<label>Privée</label>
+					</div>
+					<div class="w3-half">
+						<input id="public" class="w3-radio" type="radio" name="visibilite" value="public">
+						<label>Publique</label>
+					</div>
+				</div>
+				<div class="w3-section">      
+					<input id="nomCagnotte" class="w3-input" type="text" placeholder="personne ou évènement" required>
+					<label for="nomCagnotte">Nom de la cagnotte</label>
+				</div>
+				<div class="w3-section">      
+					<!--<input class="w3-input" type="text" required>-->
+					<textarea id="description"class="w3-input" >
+					</textarea>
+					<label for="description">Description</label>
+				</div>
+				<div class="w3-section">      
+					<input id="montantCible" class="w3-input" type="number">
+					<label for="montantCible">Montant cible</label>
+				</div>
+				<div class="w3-section">      
+					<input id="debut" class="w3-input" type="date">
+					<label for="debut">Date début</label>
+				</div>
+				<div class="w3-section">      
+					<input id="fin" class="w3-input" type="date">
+					<label for="fin">Date fin</label>
+				</div>
+				<div class="w3-section">
+					<span>Fermeture sur ...</span>
+					<input id="mt" class="w3-check" type="checkbox" >
+					<label>le montant</label>
+					<input id="dt" class="w3-check" type="checkbox" >
+					<label>la date de fin</label>
+					<br>
+					<i class="w3-small w3-text-grey">Si les deux sont cochés alors la cagnotte est cloturée au premier des deux critères atteint</i>
+				</div>
+			</form>
+		</div>
+		<div class="w3-center">
+		  <i class="fa fa-anchor w3-padding-64 w3-text-lime"></i>
+		</div>
+	</div>
+</section>
+
+<!-- payer la Cagnotte -->
+<section id="payerLaCagnotte" class="w3-container w3-light-grey w3-padding-64">
+	<div class="w3-content w3-grid"
+		style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;align-items:center">
+
+		<div class="w3-center">
+		  <i class="fa fa-coffee w3-padding-64 w3-text-lime"></i>
+		</div>
+
+		<div> 
+			<form class="w3-container" action="payer.php" method="POST">
+				<h2>Payer la cagnotte</h2>
+				<div class="w3-section">
+						<span id="visibiliteParticipation">Faire un don 
+						<input id="anonyme" class="w3-radio" type="radio" name="visibiliteDon" value="anonyme" required>
+						<label for="anonyme">anonyme</label> ou
+						<input id="public" class="w3-radio" type="radio" name="visibiliteDon" value="public" required>
+						<label for="publique">publique</label>
+				</div>
+				<div class="w3-section">      
+					<input id="nomDon" class="w3-input" type="text" placeholder="nom ou pseudo">
+					<label for="nomDon">de la part de</label>
+				</div>
+				<div class="w3-section">     
+					<textarea id="message"class="w3-input" >
+					</textarea>
+					<label for="message">message</label>
+				</div>
+				<div class="w3-section">      
+					<input id="montantDon" class="w3-input" type="number">
+					<label for="montantDon">Montant</label>
+				</div>
+				<div class="w3-section">
+					<ul class="w3-ul">
+						<li><input id="cb" class="w3-radio" type="radio" name="moyenDon" value="cb" required><label for="cb">Carte Bancaire</label></li>
+						<li><input id="vir" class="w3-radio" type="radio" name="moyenDon" value="vir" required><label for="vir">Virement</label></li>
+						<li><input id="paypal" class="w3-radio" type="radio" name="moyenDon" value="paypal" required><label for="paypal">Paypal</label></li>
+						<li><input id="airtel" class="w3-radio" type="radio" name="moyenDon" value="airtel" required><label for="airtel">Airtel Money</label></li>
+					</ul>
+				</div>
+				<button class="w3-btn w3-theme w3-round" type="submit">Demarrer le paiement</button>
+			</form>
+		</div>
+  </div>
+
+</section>
+
+
+<!-- retirer la Cagnotte -->
+<section id="retirerLaCagnotte" class="w3-container w3-padding-64">
+	<div class="w3-content w3-grid"
+	  style="grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:16px;align-items:center">
+		<div> 
+			<form class="w3-container">
+				<h2>Retirer la cagnotte</h2>
+				<div class="w3-section">      
+					<input id="nomCagnotte" class="w3-input" type="text" placeholder="personne ou évènement" required>
+					<label for="nomCagnotte">Identifiant de la cagnotte</label>
+				</div>
+				<div class="w3-section">      
+					<!--<input class="w3-input" type="text" required>-->
+					<textarea id="description"class="w3-input" >
+					</textarea>
+					<label for="description">Description</label>
+				</div>
+				<div class="w3-section">
+					<ul class="w3-ul">
+						<li><input id="vir" class="w3-radio" type="radio" name="moyenDon" value="vir" required><label for="vir">Virement</label></li>
+						<li><input id="paypal" class="w3-radio" type="radio" name="moyenDon" value="paypal" required><label for="paypal">Paypal</label></li>
+						<li><input id="airtel" class="w3-radio" type="radio" name="moyenDon" value="airtel" required><label for="airtel">Airtel Money</label></li>
+					</ul>
+				</div>
+				<div class="w3-section">
+					<div class="w3-grid-padding" style="grid-template-columns:repeat(4,1fr);align-items:center">
+						<div class="w3-container">
+							<input id="code1" class="w3-border w3-border-light-blue w3-round w3-xxlarge" type="text" size="1" required>
+						</div>
+						<div class="w3-container">
+							<input id="code1" class="w3-border w3-border-light-blue w3-round w3-xxlarge" type="text" size="1" required>
+						</div>
+						<div class="w3-container">
+							<input id="code1" class="w3-border w3-border-light-blue w3-round w3-xxlarge" type="text" size="1" required>
+						</div>
+						<div class="w3-container">
+							<input id="code1" class="w3-border w3-border-light-blue w3-round w3-xxlarge" type="text" size="1" required>
+						</div>
+					</div>
+					<input id="montantCible" class="w3-input" type="number">
+					<label for="montantCible">Code validation</label>
+					
+				</div>
+			</form>
+		</div>
+		<div class="w3-center">
+		  <i class="fa fa-anchor w3-padding-64 w3-text-lime"></i>
+		</div>
+	</div>
+</section>
+<!-- Quote -->
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+  <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">
+
+  <div class="w3-xlarge w3-padding-32">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+
+  <p>
+  Powered by
+  <a href="https://www.w3schools.com/w3css/default.asp"
+  target="_blank">w3.css</a>
+  </p>
+
+</footer>
+
+<script>
+const mobileMenu = document.getElementById("navDemo");
+
+function myFunction() {
+  mobileMenu.classList.toggle("w3-show");
+}
+
+// Side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "100%";
+  x.style.fontSize = "40px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Tabs
+function openCity(evt, cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  var activebtn = document.getElementsByClassName("testbtn");
+  for (i = 0; i < x.length; i++) {
+    activebtn[i].className = activebtn[i].className.replace(" w3-theme-dark", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-theme-dark";
+}
+
+var mybtn = document.getElementsByClassName("testbtn")[0];
+mybtn.click();
+
+// Accordions
+function myAccFunc(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Slideshows
+var slideIndex = 1;
+
+function plusDivs(n) {
+  slideIndex = slideIndex + n;
+  showDivs(slideIndex);
+}
+
+function showDivs(n) {
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+showDivs(1);
+
+// Progress Bars
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 1;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width == 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+</script>
+
+</body>
+</html>
